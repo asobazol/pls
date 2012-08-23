@@ -29,8 +29,4 @@
 		</dependency>
 	</dependencies>
 
-	<build>
-		<finalName>ltl-web</finalName>
-	</build>
-
 </project>

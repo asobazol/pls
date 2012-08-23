@@ -1,0 +1,115 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>pls-config</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.pls</groupId>
+		<artifactId>pls-parent</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<!-- Modules -->
+		<ltl.service.api.version>1.0.0-SNAPSHOT</ltl.service.api.version>
+		<ltl.service.version>1.0.0-SNAPSHOT</ltl.service.version>
+		
+		<ltl.web.version>1.0.0-SNAPSHOT</ltl.web.version>
+		<ltl.ui.version>1.0.0-SNAPSHOT</ltl.ui.version>
+		
+		<general.dao.api.version>1.0.0-SNAPSHOT</general.dao.api.version>
+		<general.dao.version>1.0.0-SNAPSHOT</general.dao.version>
+		<!-- Modules -->
+
+		<!-- Libraries -->
+		<javaee.api.version>6.0</javaee.api.version>
+		<!-- Libraries -->
+
+		<!-- Plugins -->
+		<war.plugin.version>2.2</war.plugin.version>
+		<ear.plugin.version>2.7</ear.plugin.version>
+		<!-- Plugins -->
+	</properties>
+
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Modules -->
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>ltl-service-api</artifactId>
+				<version>${ltl.service.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>ltl-service</artifactId>
+				<type>ejb</type>
+				<version>${ltl.service.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>ltl-web</artifactId>
+				<type>war</type>
+				<version>${ltl.web.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>ltl-ui</artifactId>
+				<version>${ltl.ui.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>general-dao-api</artifactId>
+				<version>${general.dao.api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.pls</groupId>
+				<artifactId>general-dao</artifactId>
+				<type>ejb</type>
+				<version>${general.dao.version}</version>
+			</dependency>
+			<!-- Modules -->
+
+			<!-- Libraries -->
+			<dependency>
+				<groupId>javax</groupId>
+				<artifactId>javaee-api</artifactId>
+				<version>${javaee.api.version}</version>
+			</dependency>
+			<!-- Libraries -->
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>${war.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>${ear.plugin.version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ejb-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<ejbVersion>3.0</ejbVersion>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

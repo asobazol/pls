@@ -9,6 +9,7 @@
 		<groupId>com.pls</groupId>
 		<artifactId>pls-config</artifactId>
 		<version>1.0.0-SNAPSHOT</version>
+		<relativePath>../pls-config/pom.xml</relativePath>
 	</parent>
 
 	<dependencies>

@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>pls-ear</artifactId>
+	<packaging>ear</packaging>
+	<version>1.0.0-SNAPSHOT</version>
+
+	<parent>
+		<groupId>com.pls</groupId>
+		<artifactId>pls-config</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>ltl-service-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>ltl-service</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>general-dao-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>general-dao</artifactId>
+			<type>ejb</type>
+		</dependency>
+
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>ltl-web</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>plspro</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<generateApplicationXml>true</generateApplicationXml>
+					<modules>
+						<ejbModule>
+							<groupId>com.pls</groupId>
+							<artifactId>ltl-service</artifactId>
+						</ejbModule>
+						<ejbModule>
+							<groupId>com.pls</groupId>
+							<artifactId>general-dao</artifactId>
+						</ejbModule>
+						<webModule>
+							<groupId>com.pls</groupId>
+							<artifactId>ltl-web</artifactId>
+							<contextRoot>/ltl</contextRoot>
+						</webModule>
+						<jarModule>
+							<groupId>com.pls</groupId>
+							<artifactId>ltl-service-api</artifactId>
+							<bundleDir>/lib</bundleDir>
+						</jarModule>
+						<jarModule>
+							<groupId>com.pls</groupId>
+							<artifactId>general-dao-api</artifactId>
+							<bundleDir>/lib</bundleDir>
+						</jarModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

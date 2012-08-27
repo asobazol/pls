@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>pls-ear</artifactId>
 	<packaging>ear</packaging>
-	<version>1.0.0-SNAPSHOT</version>
+	<!-- <version>1.0.0-SNAPSHOT</version> -->
 
 	<parent>
 		<groupId>com.pls</groupId>
@@ -38,6 +38,11 @@
 			<artifactId>ltl-web</artifactId>
 			<type>war</type>
 		</dependency>
+		<dependency>
+			<groupId>com.pls</groupId>
+			<artifactId>ltl-ui</artifactId>
+			<type>war</type>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -51,25 +56,36 @@
 						<ejbModule>
 							<groupId>com.pls</groupId>
 							<artifactId>ltl-service</artifactId>
+							<bundleFileName>ltl-service.jar</bundleFileName>
 						</ejbModule>
 						<ejbModule>
 							<groupId>com.pls</groupId>
 							<artifactId>general-dao</artifactId>
+							<bundleFileName>general-dao.jar</bundleFileName>
 						</ejbModule>
 						<webModule>
 							<groupId>com.pls</groupId>
 							<artifactId>ltl-web</artifactId>
 							<contextRoot>/ltl</contextRoot>
+							<bundleFileName>ltl-web.war</bundleFileName>
+						</webModule>
+						<webModule>
+							<groupId>com.pls</groupId>
+							<artifactId>ltl-ui</artifactId>
+							<contextRoot>/ltl-ui</contextRoot>
+							<bundleFileName>ltl-ui.war</bundleFileName>
 						</webModule>
 						<jarModule>
 							<groupId>com.pls</groupId>
 							<artifactId>ltl-service-api</artifactId>
 							<bundleDir>/lib</bundleDir>
+							<bundleFileName>ltl-service-api.jar</bundleFileName>
 						</jarModule>
 						<jarModule>
 							<groupId>com.pls</groupId>
 							<artifactId>general-dao-api</artifactId>
 							<bundleDir>/lib</bundleDir>
+							<bundleFileName>general-dao-api.jar</bundleFileName>
 						</jarModule>
 					</modules>
 				</configuration>

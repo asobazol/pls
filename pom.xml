@@ -14,6 +14,7 @@
 		<module>ltl-service</module>
 		<module>ltl-service-api</module>
 		<module>ltl-web</module>
+		<module>ltl-ui</module>
 		<module>general-dao-api</module>
 		<module>general-dao</module>
 	</modules>

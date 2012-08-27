@@ -5,6 +5,7 @@ import javax.ejb.Stateless;
 
 import com.pls.dao.ltl.CustomerDao;
 import com.pls.domain.ltl.Customer;
+import com.pls.service.ltl.dto.TestDTO;
 
 @Stateless
 public class LTLServiceBean implements LTLService {
@@ -13,9 +14,9 @@ public class LTLServiceBean implements LTLService {
 	private CustomerDao customerDao;
 	
 	@Override
-	public String test(String str) {
-		customerDao.persist(new Customer(str));
-		return str;
+	public TestDTO businessMethod(String param) {
+		customerDao.persist(new Customer(param));
+		return new TestDTO(param);
 	}
 
 }

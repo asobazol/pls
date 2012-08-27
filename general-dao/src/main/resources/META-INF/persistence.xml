@@ -7,7 +7,9 @@
 	<persistence-unit name="plspro">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<jta-data-source>java:jboss/datasources/PlsProDS</jta-data-source>
+		<jar-file>lib/general-dao-api.jar</jar-file>
 		<properties>
+			<property name="hibernate.hbm2ddl.auto" value="create-drop" />
 			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
 			<property name="hibernate.show_sql" value="true" />
 		</properties>

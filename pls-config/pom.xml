@@ -3,8 +3,8 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>pls-config</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<!-- <version>1.0.0-SNAPSHOT</version> -->
 
 	<parent>
 		<groupId>com.pls</groupId>
@@ -17,16 +17,17 @@
 		<!-- Modules -->
 		<ltl.service.api.version>1.0.0-SNAPSHOT</ltl.service.api.version>
 		<ltl.service.version>1.0.0-SNAPSHOT</ltl.service.version>
-		
+
 		<ltl.web.version>1.0.0-SNAPSHOT</ltl.web.version>
 		<ltl.ui.version>1.0.0-SNAPSHOT</ltl.ui.version>
-		
+
 		<general.dao.api.version>1.0.0-SNAPSHOT</general.dao.api.version>
 		<general.dao.version>1.0.0-SNAPSHOT</general.dao.version>
 		<!-- Modules -->
 
 		<!-- Libraries -->
 		<javaee.api.version>6.0</javaee.api.version>
+		<gwt.version>2.5.0-rc1</gwt.version>
 		<!-- Libraries -->
 	</properties>
 
@@ -56,6 +57,7 @@
 			<dependency>
 				<groupId>com.pls</groupId>
 				<artifactId>ltl-ui</artifactId>
+				<type>war</type>
 				<version>${ltl.ui.version}</version>
 			</dependency>
 
@@ -77,6 +79,18 @@
 				<groupId>javax</groupId>
 				<artifactId>javaee-api</artifactId>
 				<version>${javaee.api.version}</version>
+			</dependency>
+
+
+			<dependency>
+				<groupId>com.google.gwt</groupId>
+				<artifactId>gwt-user</artifactId>
+				<version>${gwt.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.gwt</groupId>
+				<artifactId>gwt-dev</artifactId>
+				<version>${gwt.version}</version>
 			</dependency>
 			<!-- Libraries -->
 		</dependencies>

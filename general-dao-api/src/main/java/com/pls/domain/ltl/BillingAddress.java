@@ -10,30 +10,16 @@ import com.pls.domain.Identifiable;
 
 @Entity
 @Table(name = "customer")
-public class Customer implements Identifiable<Integer> {
-
+public class BillingAddress implements Identifiable<Integer> {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 
-	private String name;
-
-	public Customer() {
-	}
-
-	public Customer(String name) {
-		this.name = name;
+	public BillingAddress() {
 	}
 
 	public Integer getId() {
 		return id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 }

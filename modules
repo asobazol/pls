@@ -1,0 +1,18 @@
+pls-parent - module for plugin configuration.
+
+pls-config - module for artifact version configuration.
+
+ltl-service-api – contains LTL Service API.
+
+ltl-service – EJB module, implements LTL Service API.
+
+ltl-web – WAR module, contains LTL RESTful services, a facade for LTL Service API.
+
+ltl-ui – WAR module, contains only GWT specific LTL UI implementation.
+
+general-dao-api – contains general DAO API and Domain model.
+
+general-dao – EJB module, implementation of general DAO.
+
+pls-ear – EAR module, defines all application modules and generates application.xml deployment descriptor.
+

@@ -1,18 +1,13 @@
 package com.pls.ltl.client;
 
-public class TestDTO {
+import com.google.gwt.core.client.JavaScriptObject;
+
+public class TestDTO extends JavaScriptObject {
 	
-	private String param;
-
-	public TestDTO(String param) {
-		this.param = param;
+	protected TestDTO() {
 	}
-
-	public String getParam() {
-		return param;
-	}
-
-	public void setParam(String param) {
-		this.param = param;
-	}
+	
+	public final native String getParam() /*-{
+    	return this.param;
+	}-*/;
 }
